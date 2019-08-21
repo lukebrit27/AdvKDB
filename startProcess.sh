@@ -6,6 +6,8 @@ echo `pwd`;
 PROC_PORT=${1}_PORT;
 PROC_STARTUP=${1}_STARTUP;
 
+
+echo "all command line args ${*}"
 if [ -z "$1" ] 
 then 
 	echo "Please specify the process you want to start"
@@ -19,5 +21,14 @@ then
 else 
 	echo "Will use this port ${!PROC_PORT}"
 	echo "Will use this profile ${!PROC_STARTUP}"
-	eval "q ${!PROC_STARTUP} -p ${!PROC_PORT} &"
+	
+
+	if [ "$2" = "-fg" ]
+	then  
+	   	eval "q ${!PROC_STARTUP} -p ${!PROC_PORT}"
+	
+	else
+	   	eval "q ${!PROC_STARTUP} -p ${!PROC_PORT} &"
+	fi
+		
 fi	
