@@ -5,4 +5,4 @@
 .env.hdbDir:.env.codeDir,"/hdb";
 .env.repoDir:.env.codeDir,"/repo";
 .env.tickDir:.env.codeDir,"/tick";
-
+.env.csvDir:.env.codeDir,"/csvs";
